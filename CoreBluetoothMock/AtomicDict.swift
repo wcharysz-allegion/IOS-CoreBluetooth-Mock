@@ -9,7 +9,7 @@ import Foundation
 
 class AtomicDict<Key: Hashable, Value>: CustomDebugStringConvertible {
     private var dictStorage = [Key: Value]()
-    private let queue = DispatchQueue(label: "CoreBluetoothMock.\(UUID().uuidString)", qos: .utility, attributes: .concurrent,
+    private let queue = DispatchQueue(label: "CoreBluetoothMock.\(UUID().uuidString)", qos: .userInteractive, attributes: .concurrent,
                                       autoreleaseFrequency: .inherit, target: .global())
     
     subscript(key: Key) -> Value? {
